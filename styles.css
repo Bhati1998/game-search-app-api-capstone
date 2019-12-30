@@ -1,0 +1,94 @@
+header {
+    width: 100%;
+    height: 100px;
+    background-color: grey;
+    text-align: center;
+}
+
+.header-wrapper, .search-game {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-banner {
+    width: 90%;
+    background-color: grey;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.featured-top, .featured-bot {
+    background-color: grey;
+    margin: 10px;
+    padding: 10px;
+    width: 40%;
+    text-align: center;
+    height: 100%;
+}
+
+.random-featured-details, .random-featured-suggested {
+    margin: 10px;
+    padding: 10px;
+}
+
+.game-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-game {
+    width: 90%;
+    background-color: grey;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 20px;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.search-game form {
+    margin: 10px;
+    padding: 20px;
+}
+
+.search-results {
+    /* display: flex;
+    flex-direction: column; */
+    margin: 15px;
+    padding: 15px;
+    background-color: gray;
+    text-align: center;
+}
+
+.search-results div {
+    margin: 10px;
+    padding: 10px;
+}
+
+.social-bar {
+    width: 100%;
+    height: 50px;
+    background-color: grey;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-bar a {
+    color: black;
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px;
+}

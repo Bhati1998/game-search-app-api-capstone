@@ -1,16 +1,114 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-    <!-- <link href="style.css" rel="stylesheet" type="text/css" /> -->
-  </head>
-  <body>
-    <script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
-  <script src="scripts.js"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Game Search App</title>
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <header>
+    <div class='header-wrapper'>
+      <h1 class='page-name'>
+        Game Search
+      </h1>
+    </div>
+  </header>
+  <main>
+    <section class='featured'>
+      <div class='featured-banner featured'>
+        <h2>Featured Game!</h2>
+      </div>
+      <div class='random-featured featured-top'>
+        Random Featured Game Title
+      </div>
+      <div class='featured-bot'>
+        <div class='random-featured-details'>
+          <h4>Random Featured Game Details</h4>
+          <div>
+            <ul class='detail-list'>
+              <li>
+                release date
+              </li>
+              <li>
+                platform
+              </li>
+              <li>
+                rating
+              </li>
+              <li>
+                genre
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='featured-screenshots'>
+          <div class='featured-wrapper'>
+            this will be img
+          </div>
+        </div>
+        <div class='random-featured-suggested'>
+          <h4>Suggested games based on random featured</h4>
+          <div>This div contains suggested games based on the randomly featured game</div>
+        </div>
+      </div>
+    </section>
+    <section class='game-search'>
+      <div class='search-game'>
+        <h2>Search game by title below</h2>
+        <form>
+          Game Title:
+          <input type="text" name="firstname">
+        </form>
+      </div>
+      <div class='search-results'>
+        <div class='search-result-details'>
+          <h4>Searched Game Details</h4>
+          <div>
+            <ul class='detail-list'>
+              <li>
+                release date
+              </li>
+              <li>
+                platform
+              </li>
+              <li>
+                rating
+              </li>
+              <li>
+                genre
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class='search-result-screenshot'>
+          <div class='screenshot-wrapper'>
+            img will be here
+          </div>
+        </div>
+        <div class='search-result-youtube'>
+          <h4>Searched Game Youtube Videos</h4>
+          <div>this div contains embedded youtube videos from API</div>
+        </div>
+        <div class='search-result-suggested'>
+          <h4>Searched Game Suggested</h4>
+          <div>this div contains suggested list of games that are paginated</div>
+        </div>
+      </div>
+    </section>
+    <footer class='social-bar'>
+      <div class="icon-bar">
+        <a href="#" class="github"><i class="fa fa-github"></i></a>
+        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </footer>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+  <!-- <script src="scripts.js"></script> -->
+</body>
+
 </html>
