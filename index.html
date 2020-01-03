@@ -30,16 +30,16 @@
           <h4>Random Featured Game Details</h4>
           <div>
             <ul class='detail-list'>
-              <li>
+              <li class='featured-release-date'>
                 release date
               </li>
-              <li>
+              <li class='featured-platforms'>
                 platform
               </li>
-              <li>
+              <li class='featured-rating'>
                 rating
               </li>
-              <li>
+              <li class='featured-genre'>
                 genre
               </li>
             </ul>
@@ -59,10 +59,11 @@
     <section class='game-search'>
       <div class='search-game'>
         <h2>Search game by title below</h2>
-        <form>
+        <form id='search-form'>
           Game Title:
-          <input type="text" name="firstname">
+          <input type="text" name="game-title" id='query' label='game-title'>
         </form>
+        <button type="submit" form="search-form" value="Submit">Submit</button>
       </div>
       <div class='search-results'>
         <div class='search-result-details'>
@@ -108,7 +109,7 @@
   </main>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
     crossorigin="anonymous"></script>
-  <!-- <script src="scripts.js"></script> -->
+  <script src="scripts.js"></script>
 </body>
 
 </html>

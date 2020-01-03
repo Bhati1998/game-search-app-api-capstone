@@ -92,3 +92,7 @@ header {
     margin: 10px;
     padding: 10px;
 }
+
+.featured-wrapper-image {
+    width: 100%;
+}
