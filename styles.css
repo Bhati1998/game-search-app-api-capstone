@@ -1,8 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+html {
+    background-color: lightgreen;
+}
+
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+}
+
 header {
-    width: 100%;
     height: 100px;
     background-color: grey;
     text-align: center;
+}
+
+header, .featured-banner, .featured-top, .featured-bot, .search-game, .search-results, footer, .social-bar {
+    border: 1px solid #333;
+    box-shadow: 1px 2px #333;
+    border-radius: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 2rem;
+    padding: 25px;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 1.17rem;
+}
+
+.detail-header {
+    font-weight: 900;
 }
 
 .header-wrapper, .search-game {
@@ -19,7 +71,6 @@ header {
 }
 
 .featured-banner {
-    width: 90%;
     background-color: grey;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -30,7 +81,6 @@ header {
     background-color: grey;
     margin: 10px;
     padding: 10px;
-    width: 40%;
     text-align: center;
     height: 100%;
 }
@@ -48,7 +98,6 @@ header {
 }
 
 .search-game {
-    width: 90%;
     background-color: grey;
     margin-left: auto;
     margin-right: auto;
@@ -71,13 +120,12 @@ header {
     text-align: center;
 }
 
-.search-results div {
+.search-results .search-details {
     margin: 10px;
     padding: 10px;
 }
 
 .social-bar {
-    width: 100%;
     height: 50px;
     background-color: grey;
     text-align: center;
@@ -93,6 +141,24 @@ header {
     padding: 10px;
 }
 
-.featured-wrapper-image, .suggested-screenshot, .search-result-screenshot {
-    width: 50%;
+
+.featured-wrapper-image, .suggested-wrapper {
+    width: 100%;
 }
+
+.detail-list, .youtube-details {
+    list-style: none;
+}
+
+.search-result-screenshot, .suggested-screenshot {
+    margin: auto;
+    width: 100%;
+}
+
+.search-screenshot, .suggested-screenshot, .youtube-thumbnail, .suggested-img {
+    width: 100%;
+}
+
+/* div {
+    border: 3px solid black;
+} */

@@ -29,6 +29,8 @@ let previousReleaseDate = `${previousYear}-${showDateComputation(previousMonth)}
 
 console.log(currentReleaseDate, previousReleaseDate, 'this one');
 
+$('.search-results').hide();
+
 function getInitialData() {
 	var settings = {
 		"async": true,
@@ -56,17 +58,22 @@ function displayInitialData(inputArray) {
 	console.log(randomID);
 	// for (let i = 0; i < inputArray.length; i++) {
 	console.log(inputArray[randomID].name)
-	$('.random-featured').text(inputArray[randomID].name);
+	$('.featured-title').text(inputArray[randomID].name);
 	inputArray[randomID].platforms.forEach(function (value, key) {
 		// console.log(value.platform.name);
-		$('.featured-platforms').append(value.platform.name);
+		$('.featured-platforms').append(`<li>${value.platform.name}</li>`);
 	})
 	console.log(inputArray[randomID].rating);
+	if (inputArray[randomID].rating == 0) {
+		$('.featured-rating').text('This game is not yet rated.')
+	}
+	else {
 	$('.featured-rating').text(inputArray[randomID].rating)
+	}
 	$('.featured-genre').html();
 	inputArray[randomID].genres.forEach(function (value, key) {
 		console.log(value.name);
-		$('.featured-genre').append(value.name);
+		$('.featured-genre').append(`<li>${value.name}<li>`);
 	})
 	console.log(inputArray[randomID].released);
 	$('.featured-release-date').text(inputArray[randomID].released);
@@ -99,29 +106,36 @@ function getLikeGames(userInput) {
         })
         .then(responseJson => displayLikeGames(responseJson.results))
         .catch(err => {
-            $('.search-result-suggested').html('There are no suggested videos');
+            $('.suggested-text').html('There are no suggested games');
         });
 }
 
 function displayLikeGames (inputArray) {
+	$('.suggested-text').empty();
 	console.log(inputArray);
 	console.log(inputArray[0].name)
 	$('.suggested-title').html(inputArray[0].name);
+	$('.suggested-platforms').empty();
 	inputArray[0].platforms.forEach(function (value, key) {
 		// console.log(value.platform.name);
-		$('.suggested-platforms').append(value.platform.name);
+		$('.suggested-platforms').append(`<li>${value.platform.name}</li>`);
 	})
 	console.log(inputArray[0].rating);
-	$('.suggested-rating').html(inputArray[0].rating)
-	$('.suggested-genres').html();
+	if (inputArray[0].rating == 0) {
+		$('.suggested-rating').text('This game is not yet rated.')
+	}
+	else {
+		$('.suggested-rating').html(inputArray[0].rating)
+	}
+	$('.suggested-genres').empty();
 	inputArray[0].genres.forEach(function (value, key) {
 		console.log(value.name);
-		$('.suggested-genres').append(value.name);
+		$('.suggested-genres').append(`<li>${value.name}</li>`);
 	})
 	console.log(inputArray[0].released);
 	$('.suggested-release').html(inputArray[0].released);
 	console.log(inputArray[0].background_image);
-	$('.suggested-wrapper').html(`<img src='${inputArray[0].background_image}' class='suggested-screenshot'>`)
+	$('.suggested-wrapper').html(`<img src='${inputArray[0].background_image}' class='suggested-img'>`)
 }
 
 function getUserInput() {
@@ -137,6 +151,7 @@ function getUserInput() {
 		getResults(userInput);
 		getSearchedData(userInput);
 		getLikeGames(userInput);
+		$('.search-results').show();
 	});
 }
 
@@ -158,16 +173,22 @@ function displaySearchedData (inputArray) {
 	console.log(inputArray);
 	console.log(inputArray[0].name)
 	$('.search-title').html(inputArray[0].name);
+	$('.search-platforms').empty();
 	inputArray[0].platforms.forEach(function (value, key) {
 		// console.log(value.platform.name);
-		$('.search-platforms').append(value.platform.name);
+		$('.search-platforms').append(`<li>${value.platform.name}</li>`);
 	})
 	console.log(inputArray[0].rating);
-	$('.search-rating').html(inputArray[0].rating)
-	$('.search-genres').html();
+	if (inputArray[0].rating == 0) {
+		$('.search-rating').text('This game is not yet rated.')
+	}
+	else {
+		$('.search-rating').html(inputArray[0].rating)
+	}
+	$('.search-genre').empty();
 	inputArray[0].genres.forEach(function (value, key) {
 		console.log(value.name);
-		$('.search-genres').append(value.name);
+		$('.search-genre').append(`<li>${value.name}</li>`);
 	})
 	console.log(inputArray[0].released);
 	$('.search-release').html(inputArray[0].released);
@@ -208,10 +229,10 @@ function displaySearchResults(videosArray) {
 
 	$.each(videosArray, function (videosArrayKey, videosArrayValue) {
 		//create and populate one LI for each of the results ( "+=" means concatenate to the previous one)
-		buildTheHtmlOutput += "<li>";
+		buildTheHtmlOutput += `<li class='youtube-details'>`;
 		buildTheHtmlOutput += "<p>" + videosArrayValue.snippet.title + "</p>"; //output vide title
 		buildTheHtmlOutput += "<a href='https://www.youtube.com/watch?v=" + videosArrayValue.id.videoId + "' target='_blank'>"; //taget blank is going to open the video in a new window
-		buildTheHtmlOutput += "<img src='" + videosArrayValue.snippet.thumbnails.high.url + "'/>"; //display video's thumbnail
+		buildTheHtmlOutput += "<img src='" + videosArrayValue.snippet.thumbnails.high.url + "' class='youtube-thumbnail'/>"; //display video's thumbnail
 		buildTheHtmlOutput += "</a>";
 		buildTheHtmlOutput += "</li>";
 	});

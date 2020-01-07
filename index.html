@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width">
   <title>Game Search App</title>
   <link href="styles.css" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,24 +24,32 @@
         <h2>Featured Game!</h2>
       </div>
       <div class='random-featured featured-top'>
-        Random Featured Game Title
+        <h3 class='featured-title'>Featured Game Title</h3>
       </div>
       <div class='featured-bot'>
         <div class='random-featured-details'>
-          <h4>Random Featured Game Details</h4>
+          <h4>Featured Game Details</h4>
           <div>
             <ul class='detail-list'>
-              <li class='featured-release-date'>
-                release date
+              <li>
+                <div class='detail-header'><i class="far fa-calendar-check"></i>Release Date:</div>
+                <div class='featured-release-date'></div>
+                <!-- release date -->
               </li>
-              <li class='featured-platforms'>
-                platform
+              <li >
+                <div class='detail-header'>Platforms:</div>
+                <div class='featured-platforms'></div>
+                <!-- platform -->
               </li>
-              <li class='featured-rating'>
-                rating
+              <li class=>
+                <div class='detail-header'>Rating:</div>
+                <div class='featured-rating'></div>
+                <!-- rating -->
               </li>
-              <li class='featured-genre'>
-                genre
+              <li>
+                <div class='detail-header'>Genre:</div>
+                <div class='featured-genre'></div>
+                <!-- genre -->
               </li>
             </ul>
           </div>
@@ -67,20 +76,24 @@
       </div>
       <div class='search-results'>
         <div class='search-result-details'>
-          <h4 class='search-title'>Searched Game Details</h4>
-          <div>
+          <h3 class='search-title'>Searched Game Details</h3>
+          <div class='search-details'>
             <ul class='detail-list'>
-              <li class='search-release'>
-                release date
+              <li>
+                <div class='detail-header'>Release Date:</div>
+                <div class='search-release'></div>
               </li>
-              <li class='search-platforms'>
-                platform
+              <li>
+                <div class='detail-header'>Platforms:</div>
+                <div class='search-platforms'></div>
               </li>
-              <li class='search-rating'>
-                rating
+              <li>
+                <div class='detail-header'>Rating:</div>
+                <div class='search-rating'></div>
               </li>
-              <li class='search-genre'>
-                genre
+              <li>
+                <div class='detail-header'>Genre:</div>
+                <div class='search-genre'></div>
               </li>
             </ul>
           </div>
@@ -91,19 +104,35 @@
           </div>
         </div>
         <div class='search-result-youtube'>
-          <h4>Searched Game - Related Youtube Videos</h4>
+          <h3>Searched Game - Related Youtube Videos</h3>
           <ul id='search-results'>
           </ul>
         </div>
         <div class='search-result-suggested'>
-          <h4>Searched Game Suggested</h4>
+          <h4>Suggested Game - based on search</h4>
+          <p class='suggested-text'></p>
           <div>
-            <ul class='suggested-list'>
-              <li class='suggested-title'>starts here</li>
-              <li class='suggested-release'></li>
-              <li class='suggested-platforms'></li>
-              <li class='suggested-rating'></li>
-              <li class='suggested-genres'></li>
+            <ul class='detail-list'>
+              <li>
+                  <div class='detail-header'>Game Title:</div>
+                  <div class='suggested-title'></div>
+              </li>
+              <li>
+                  <div class='detail-header'>Release Date:</div>
+                  <div class='suggested-release'></div>
+              </li>
+              <li>
+                  <div class='detail-header'>Platforms:</div>
+                  <div class='suggested-platforms'></div>
+              </li>
+              <li>
+                  <div class='detail-header'>Rating:</div>
+                  <div class='suggested-rating'></div>
+              </li>
+              <li>
+                  <div class='detail-header'>Genre:</div>
+                  <div class='suggested-genres'></div>
+              </li>
             </ul>
             <div class='suggested-screenshot'>
               <div class='suggested-wrapper'>
@@ -115,8 +144,8 @@
     </section>
     <footer class='social-bar'>
       <div class="icon-bar">
-        <a href="#" class="github"><i class="fa fa-github"></i></a>
-        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/christian-m-george/game-search-app-api-capstone" class="github" target='_blank'><i class="fa fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/christian-m-george/" class="linkedin" target='_blank'><i class="fa fa-linkedin"></i></a>
       </div>
     </footer>
   </main>
