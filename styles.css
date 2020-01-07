@@ -93,6 +93,6 @@ header {
     padding: 10px;
 }
 
-.featured-wrapper-image {
-    width: 100%;
+.featured-wrapper-image, .suggested-screenshot, .search-result-screenshot {
+    width: 50%;
 }

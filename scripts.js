@@ -44,6 +44,11 @@ function getInitialData() {
 	});
 }
 
+function formatQueryParams(params) {
+    const queryItems = Object.keys(params)
+        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+    return queryItems.join('&');
+}
 
 function displayInitialData(inputArray) {
 	console.log(inputArray);
@@ -67,26 +72,56 @@ function displayInitialData(inputArray) {
 	$('.featured-release-date').text(inputArray[randomID].released);
 	console.log(inputArray[randomID].background_image);
 	$('.featured-wrapper').html(`<img src='${inputArray[randomID].background_image}' class='featured-wrapper-image'>`)
-	// }
 }
 
-
-function getLikeGames(inputArray) {
-	var settings = {
+function getLikeGames(userInput) {
+	// let outputUrl = `https://rawg-video-games-database.p.rapidapi.com/games/${userInput}/suggested`;
+	let outputUrl = `https://api.rawg.io/api/games/${userInput}/suggested`;
+	const params = {
 		"async": true,
 		"crossDomain": true,
-		"url": "https://rawg-video-games-database.p.rapidapi.com/games/witcher/suggested",
+		"url": outputUrl,
 		"method": "GET",
-		"headers": {
-			"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
-			"x-rapidapi-key": "54602e4456msh6e18ebcdf2c7d3fp1bb6e2jsn9a45a973098f"
-		}
-	}
+		// "headers": {
+		// 	"x-rapidapi-host": "rawg-video-games-database.p.rapidapi.com",
+		// 	"x-rapidapi-key": "54602e4456msh6e18ebcdf2c7d3fp1bb6e2jsn9a45a973098f"
+		// }
+    };
+    const queryString = formatQueryParams(params)
+    const url = outputUrl + '?' + queryString;
 
-	$.ajax(settings).done(function (response) {
-		console.log(response);
-		// displayLikeGames(response.results);
-	});
+    fetch(url)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => displayLikeGames(responseJson.results))
+        .catch(err => {
+            $('.search-result-suggested').html('There are no suggested videos');
+        });
+}
+
+function displayLikeGames (inputArray) {
+	console.log(inputArray);
+	console.log(inputArray[0].name)
+	$('.suggested-title').html(inputArray[0].name);
+	inputArray[0].platforms.forEach(function (value, key) {
+		// console.log(value.platform.name);
+		$('.suggested-platforms').append(value.platform.name);
+	})
+	console.log(inputArray[0].rating);
+	$('.suggested-rating').html(inputArray[0].rating)
+	$('.suggested-genres').html();
+	inputArray[0].genres.forEach(function (value, key) {
+		console.log(value.name);
+		$('.suggested-genres').append(value.name);
+	})
+	console.log(inputArray[0].released);
+	$('.suggested-release').html(inputArray[0].released);
+	console.log(inputArray[0].background_image);
+	$('.suggested-wrapper').html(`<img src='${inputArray[0].background_image}' class='suggested-screenshot'>`)
 }
 
 function getUserInput() {
@@ -115,8 +150,29 @@ function getSearchedData(userInput) {
 
 	$.ajax(settings).done(function (response) {
 		console.log(response);
-		// displaySearchedData(response.results);
+		displaySearchedData(response.results);
 	});
+}
+
+function displaySearchedData (inputArray) {
+	console.log(inputArray);
+	console.log(inputArray[0].name)
+	$('.search-title').html(inputArray[0].name);
+	inputArray[0].platforms.forEach(function (value, key) {
+		// console.log(value.platform.name);
+		$('.search-platforms').append(value.platform.name);
+	})
+	console.log(inputArray[0].rating);
+	$('.search-rating').html(inputArray[0].rating)
+	$('.search-genres').html();
+	inputArray[0].genres.forEach(function (value, key) {
+		console.log(value.name);
+		$('.search-genres').append(value.name);
+	})
+	console.log(inputArray[0].released);
+	$('.search-release').html(inputArray[0].released);
+	console.log(inputArray[0].background_image);
+	$('.search-wrapper').html(`<img src='${inputArray[0].background_image}' class='search-screenshot'>`)
 }
 
 function getResults(userInput) {
