@@ -106,7 +106,9 @@ function getLikeGames(userInput) {
         })
         .then(responseJson => displayLikeGames(responseJson.results))
         .catch(err => {
-            $('.suggested-text').html('There are no suggested games');
+			$('.suggested-text').html('There are no suggested games');
+			$('.suggested-title').empty();
+			$('.suggested-body').hide();
         });
 }
 
@@ -136,6 +138,7 @@ function displayLikeGames (inputArray) {
 	$('.suggested-release').html(inputArray[0].released);
 	console.log(inputArray[0].background_image);
 	$('.suggested-wrapper').html(`<img src='${inputArray[0].background_image}' class='suggested-img'>`)
+	$('.suggested-body').show();
 }
 
 function getUserInput() {

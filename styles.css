@@ -41,16 +41,22 @@ header, .featured-banner, .featured-top, .featured-bot, .search-game, .search-re
 }
 
 h1 {
-    font-size: 2rem;
-    padding: 25px;
+    font-size: 3.5rem;
+    padding: 15px;
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h3 {
-    font-size: 1.17rem;
+    font-size: 1.7rem;
+}
+
+.page-name {
+    text-shadow: 0 5px 20px rgba(0, 0, 0, .9);
+    letter-spacing: 10px;
+    text-transform: lowercase;
 }
 
 .detail-header {
@@ -61,6 +67,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
+    vertical-align: center;
 }
 
 .featured {
@@ -143,7 +150,9 @@ h3 {
 
 
 .featured-wrapper-image, .suggested-wrapper {
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .detail-list, .youtube-details {
@@ -152,13 +161,75 @@ h3 {
 
 .search-result-screenshot, .suggested-screenshot {
     margin: auto;
-    width: 100%;
+    width: 90%;
+    padding: 20px;
 }
 
 .search-screenshot, .suggested-screenshot, .youtube-thumbnail, .suggested-img {
-    width: 100%;
+    width: 85%;
 }
 
 /* div {
     border: 3px solid black;
 } */
+
+.featured-bot {
+    padding-top: 0px;
+}
+
+.featured-header {
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 1.35rem;
+}
+
+.far, .fas {
+    padding: 10px;
+    font-size: 25px;
+}
+
+.random-featured-details {
+    margin-top: 0px;
+}
+
+.detail-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul .youtube-details {
+    padding: 18px;
+    margin: 10px;
+}
+
+.search-describer {
+    margin: 10px;
+    padding: 10px;
+    font-size: 1.7rem;
+}
+
+.suggested-title {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.search-wrapper {
+    margin-bottom: 20px;
+}
+
+.youtube-details p {
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+button {
+    font-size: 24px;
+    border-radius: 12px;
+    width: 20%;
+    background-color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
