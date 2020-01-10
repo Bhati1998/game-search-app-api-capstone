@@ -9,6 +9,7 @@ let previousMonth = (currentMonth - 1);
 if (previousMonth == 0) {
 	previousMonth = 12;
 }
+// wil this cause 1 year and 1 month different when the month is not january?
 let previousDay = (currentDay - 1);
 if (previousDay == 0) {
 	previousDay = 30;
